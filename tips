@@ -1,0 +1,22 @@
+if we want to use launchfile on gazebo we need to use "sim time"
+
+$ ros2 launch my_robot rsp.launch.py use_sim_time:=true 
+
+-- want to check if it works well 
+
+$ ros2 param get /robot_state_publisher use_sim_time
+
+urdf를 가제보에 얹을때 urdf visual에서 정한 색을 표현하려면 gazebotag를 urdf에 붙여야 한다.
+
+ros2_control 은 시뮬레이션상의 로봇과 현실의 로봇이 같은 움직임을 하게 해준다
+
+gazebo_control 에서 정말 철자 하나 틀리면 로봇 ㅈ 같이 움직임 조심하셈!
+본인 방금 wheel separation을 seperation이라고 했다가 로봇 발작일으킴 
+철자 틀린거 나중에 찾기 ㅈㄴ 어려우니까 애초에 안틀린다는 마인드로 해야함 
+
+하지만 실수 발생시에는 teleop_keyboard를 사용해서 로봇이 어떤상황에서 문제를 일으키는지 보고 거꾸로 찾아나가볼 수 있음
+
+
+모바일로봇이 미끄러져다녀야 되는데 튕기면서 다니길래 왜이럴까 했는데 
+볼캐스터에 마찰력이 작용해서 튀기는거였음 동영상 찍어놓음 (생각보다는 귀여움)
+볼캐스터에 마찰력이 작용하지 않게 적용해야함
