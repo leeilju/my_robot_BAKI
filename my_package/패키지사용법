@@ -1,0 +1,7 @@
+description : 현 패키지에 대한 설명란
+
+maintainer : 본인 이메일과 이름 적는공간
+
+license : 패키지에서 사용하는 라이센스를 표시하는 공간.
+
+<~_depend> : 여기에 어떤 dependencies를 사용하는지 적어주는 공간.

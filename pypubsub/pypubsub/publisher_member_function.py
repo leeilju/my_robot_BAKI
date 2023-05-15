@@ -18,9 +18,12 @@ from rclpy.node import Node
 # from std_msgs.msg import String
 from my_interfaces.msg import Numbers
 
+import os
+import getpass
 
+username = getpass.getuser()
 import sys
-sys.path.append("/home/iljujjang/catkin_ws/src/BAKI/ASTAR")
+sys.path.append("/home/"+username+"/catkin_ws/src/BAKI/ASTAR")
 
 import astar
 
@@ -103,6 +106,7 @@ class MinimalPublisher(Node): #Node로 붙어 산속받아 만들어진 클래�
 
         self.publisher_.publish(msg)
         self.get_logger().info('Publishing: "%d | %d "' % (msg.a[1],msg.b[2]))  # CHANGE
+
 
 def main(args=None):
     rclpy.init(args=args) # rclpy.init이 사용되는순간 node가 생성된다. 

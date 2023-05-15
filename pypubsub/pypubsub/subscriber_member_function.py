@@ -30,11 +30,13 @@ class MinimalSubscriber(Node):
             self.listener_callback,
             10)
         self.subscription
+        self.count = 0
 
     def listener_callback(self, msg):
             # self.get_logger().info('I heard: "%d  | %d  "' % (msg.a[1],msg.b[1])) # CHANGE
             for i in range (len(msg.a)):
-                 print('x%d=%f, y%d=%f'%(i,msg.a[i],i,msg.b[i]))
+                 print('%d : x%d=%f, y%d=%f'%(self.count, i,msg.a[i],i,msg.b[i]))
+            self.count = self.count + 1
 
 
 
