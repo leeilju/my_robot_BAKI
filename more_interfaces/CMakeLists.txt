@@ -33,6 +33,9 @@ find_package(rosidl_default_generators REQUIRED)
 
 set(msg_files
   "msg/AddressBook.msg"
+  "msg/EncoderValue.msg"
+  "msg/MotorVelocity.msg"
+  "msg/MotorCommand.msg"
   #etc
 )
 
