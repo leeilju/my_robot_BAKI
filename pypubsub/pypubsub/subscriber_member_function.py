@@ -29,15 +29,30 @@ class MinimalSubscriber(Node):
             'topic',
             self.listener_callback,
             10)
+        self.publisher_= self.create_publisher(Numbers, 'topic2', 10)
+        timer_period = 0.5
+        self.timer = self.create_timer(timer_period, self.timer_callback)
+        self.listlength = None
+        
         self.subscription
         self.count = 0
+        self.msg2 = Numbers()
+
 
     def listener_callback(self, msg):
             # self.get_logger().info('I heard: "%d  | %d  "' % (msg.a[1],msg.b[1])) # CHANGE
             for i in range (len(msg.a)):
                  print('%d : x%d=%f, y%d=%f'%(self.count, i,msg.a[i],i,msg.b[i]))
             self.count = self.count + 1
+            self.msg2.a = msg.a
+            self.msg2.b = msg.b
 
+    def timer_callback(self):
+         msg = Numbers()
+         msg = self.msg2
+         self.publisher_.publish(msg)
+
+        
 
 
 def main(args=None):

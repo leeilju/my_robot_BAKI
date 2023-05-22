@@ -1,0 +1,3 @@
+bool is_pwm
+float32 motor_left_req_rad_sec
+float32 motor_right_req_rad_sec

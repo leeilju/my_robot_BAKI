@@ -20,6 +20,7 @@ setup(
     tests_require=['pytest'],
     entry_points={
         'console_scripts': [
+            'gui = ROS_2_SERIAL.serial_gui:main',
         ],
     },
 )

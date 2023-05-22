@@ -53,6 +53,7 @@
                     <resolution>1</resolution>
                 </range>
             </ray>
+            <!-- plugin for interact with outside and inside gazebo -->
             <plugin name="laser_controller" filename="libgazebo_ros_ray_sensor.so">
                 <ros>
                     <argument>~/out:=scan</argument>

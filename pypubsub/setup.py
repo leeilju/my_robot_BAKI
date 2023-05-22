@@ -21,7 +21,8 @@ setup(
     entry_points={
         'console_scripts': [
             'talker = pypubsub.publisher_member_function:main' ,
-            'listner = pypubsub.subscriber_member_function:main',
+            'listnerandtalker2 = pypubsub.subscriber_member_function:main',
+            'listener2 = pypubsub.subscriber2:main'
         ],
     },
 )
